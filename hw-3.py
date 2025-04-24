@@ -51,7 +51,11 @@ def parse_command(command_str):
 def main():
     print("Welcome to the assistant bot!")
     while True:
-        command_str = input("Enter a command: ")
+        command_str = input("Enter a command: ").strip()
+        if not command_str:
+            print("Please enter a command.")
+            continue
+
         if command_str.lower() in ["exit", "close", "good bye"]:
             print("Good bye!")
             break
